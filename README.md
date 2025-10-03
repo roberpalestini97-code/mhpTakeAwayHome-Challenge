@@ -11,11 +11,14 @@ The challenge was solved using:
 ## 📂 Repository Structure
 
 mhpTakeAwayHome-Challenge/
+
 │── back/ # Backend with NestJS
 
 │── front/ # Frontend with Next.js (App Router)
 
+
 ## 📌 Main Endpoints
+
 Backend
 
 GET /movies/search?q=<query> → Search for movies on OMDb.
