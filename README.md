@@ -40,19 +40,30 @@ Frontend
 ## ⚙️ Setup
 
 Install dependencies:
+
 Run the following script in the root directory to install the dependencies for both stacks:
+
 npm run install:all
 
+
 ▶️ Running the application
+
 You can run the backend and frontend with a single command:
+
 npm run dev
+
+
 The backend (NestJS) will run at: http://localhost:4000
+
 The frontend (Next.js) will run at: http://localhost:3000
+
 
 ## Running Tests
 
 ### Backend (NestJS)
+
 cd backend
+
 npm run test
 
 
