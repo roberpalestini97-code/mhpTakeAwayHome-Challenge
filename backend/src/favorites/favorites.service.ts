@@ -1,23 +1,33 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 
 @Injectable()
 export class FavoritesService {
-  private favorites: { imdbID: string; Title: string }[] = [];
+  private favorites: any[] = [];
 
-  getFavorites() {
+  getAll() {
     return this.favorites;
   }
 
-  addFavorite(movie: { imdbID: string; Title: string }) {
-    const exists = this.favorites.find((f) => f.imdbID === movie.imdbID);
+  add(movie: any) {
+    const exists = this.favorites.find(f => f.imdbID === movie.imdbID);
     if (!exists) {
-      this.favorites.push(movie);
+      // ✅ Guardamos la info completa de la película
+      this.favorites.push({
+        imdbID: movie.imdbID,
+        Title: movie.Title,
+        Year: movie.Year,
+        Poster: movie.Poster,
+      });
     }
-    return movie;
+    return this.favorites;
   }
 
-  removeFavorite(imdbID: string) {
-    this.favorites = this.favorites.filter((f) => f.imdbID !== imdbID);
-    return { removed: imdbID };
+  remove(imdbID: string) {
+    const index = this.favorites.findIndex(f => f.imdbID.imdbID === imdbID);
+    if (index === -1) {
+      throw new NotFoundException('Movie not in favorites');
+    }
+    this.favorites.splice(index, 1);
+    return this.favorites;
   }
 }

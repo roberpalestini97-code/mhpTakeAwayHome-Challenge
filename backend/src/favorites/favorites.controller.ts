@@ -7,17 +7,17 @@ export class FavoritesController {
 
   @Get()
   getAll() {
-    return this.favoritesService.getFavorites();
+    return this.favoritesService.getAll();
   }
 
   @Post()
   add(@Body() movie: any) {
     // movie = { imdbID, Title, Year, Poster }
-    return this.favoritesService.addFavorite(movie);
+    return this.favoritesService.add(movie);
   }
 
   @Delete(':id')
   remove(@Param('id') imdbID: string) {
-    return this.favoritesService.removeFavorite(imdbID);
+    return this.favoritesService.remove(imdbID);
   }
 }
