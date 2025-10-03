@@ -11,37 +11,59 @@ The challenge was solved using:
 ## 📂 Repository Structure
 
 mhpTakeAwayHome-Challenge/
+
 │── back/ # Backend with NestJS
+
 │── front/ # Frontend with Next.js (App Router)
 
+
 ## 📌 Main Endpoints
+
 Backend
+
 GET /movies/search?q=<query> → Search for movies on OMDb.
+
 POST /favorites → Add a movie to favorites.
+
 GET /favorites → List all favorite movies.
+
 DELETE /favorites/:id → Remove a movie from favorites.
 
+
 Frontend
+
 / → Movie search page.
+
 /favorites → Favorites list page.
 
 
 ## ⚙️ Setup
 
 Install dependencies:
+
 Run the following script in the root directory to install the dependencies for both stacks:
+
 npm run install:all
 
+
 ▶️ Running the application
+
 You can run the backend and frontend with a single command:
+
 npm run dev
+
+
 The backend (NestJS) will run at: http://localhost:4000
+
 The frontend (Next.js) will run at: http://localhost:3000
+
 
 ## Running Tests
 
 ### Backend (NestJS)
+
 cd backend
+
 npm run test
 
 
