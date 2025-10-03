@@ -12,17 +12,25 @@ The challenge was solved using:
 
 mhpTakeAwayHome-Challenge/
 │── back/ # Backend with NestJS
+
 │── front/ # Frontend with Next.js (App Router)
 
 ## 📌 Main Endpoints
 Backend
+
 GET /movies/search?q=<query> → Search for movies on OMDb.
+
 POST /favorites → Add a movie to favorites.
+
 GET /favorites → List all favorite movies.
+
 DELETE /favorites/:id → Remove a movie from favorites.
 
+
 Frontend
+
 / → Movie search page.
+
 /favorites → Favorites list page.
 
 
