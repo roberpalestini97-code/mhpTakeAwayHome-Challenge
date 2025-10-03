@@ -1,0 +1,12 @@
+{
+  "name": "mhpTakeAwayHome-Challenge",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "concurrently \"cd backend && npm install\" \"cd frontend && npm install\"",
+    "dev": "concurrently \"cd backend && npm run start\" \"cd frontend && npm run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

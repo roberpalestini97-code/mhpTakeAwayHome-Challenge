@@ -52,7 +52,7 @@ export default function SearchPage() {
   const { data: results = [], isFetching } = useSearch(term);
   const { data: favs = [], add, remove } = useFavorites();
 
-  const favSet = new Set(favs.map((f) => f.imdbID));
+  const favSet = new Set(favs.map((f) => f.imdbID.imdbID));
 
   return (
     <div style={{ padding: 20 }}>

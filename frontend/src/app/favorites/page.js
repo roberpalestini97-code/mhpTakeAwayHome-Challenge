@@ -32,11 +32,14 @@ export default function FavoritesPage() {
       <div style={{ marginTop: 20, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 220px)', gap: 12 }}>
         {favs.length === 0 && <p>No favorites yet.</p>}
         {favs.map((m) => (
-          <div key={m.imdbID.imdbID} style={{ border: '1px solid #ddd', padding: 8 }}>
+          <div 
+          key={m.imdbID.imdbID} 
+          style={{ border: '1px solid #ddd', padding: 8 }}
+          >
             <img src={m.imdbID.Poster !== 'N/A' ? m.imdbID.Poster : '/no-poster.png'} alt={m.imdbID.Title} style={{ width: '100%', height: 300, objectFit: 'cover' }}/>
             <h3>{m.imdbID.Title}</h3>
             <p>{m.imdbID.Year}</p>
-            <button onClick={() => remove.mutate(m.imdbID)}>Remove</button>
+            <button onClick={() => remove.mutate(m.imdbID.imdbID)}>Remove</button>
           </div>
         ))}
       </div>
